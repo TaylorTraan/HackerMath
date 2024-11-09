@@ -11,7 +11,15 @@ import SwiftUI
 struct HackerMathApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                WelcomeView()
+            }
+            .environmentObject(
+                GameViewModel(
+                    difficulty: 1,
+                    questionCount: 10
+                )
+            )
         }
     }
 }

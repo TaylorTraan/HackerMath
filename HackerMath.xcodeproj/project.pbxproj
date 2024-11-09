@@ -8,17 +8,29 @@
 
 /* Begin PBXBuildFile section */
 		D9AA87DB2CE00D24005905B4 /* HackerMathApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AA87DA2CE00D24005905B4 /* HackerMathApp.swift */; };
-		D9AA87DD2CE00D24005905B4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AA87DC2CE00D24005905B4 /* ContentView.swift */; };
+		D9AA87DD2CE00D24005905B4 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AA87DC2CE00D24005905B4 /* WelcomeView.swift */; };
 		D9AA87DF2CE00D25005905B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9AA87DE2CE00D25005905B4 /* Assets.xcassets */; };
 		D9AA87E22CE00D25005905B4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D9AA87E12CE00D25005905B4 /* Preview Assets.xcassets */; };
+		D9AA87EC2CE00ECA005905B4 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AA87EB2CE00ECA005905B4 /* GameView.swift */; };
+		D9AA87EE2CE00EE6005905B4 /* EndScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AA87ED2CE00EE6005905B4 /* EndScreenView.swift */; };
+		D9AA87F02CE00EFF005905B4 /* gameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AA87EF2CE00EFF005905B4 /* gameViewModel.swift */; };
+		D9AA87F22CE00F1B005905B4 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AA87F12CE00F1B005905B4 /* GameModel.swift */; };
+		D9AA87F72CE01A39005905B4 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9AA87F62CE01A39005905B4 /* Launch Screen.storyboard */; };
+		D9FB08FA2CE01F2100C2B82D /* polyhedron.usdz in Resources */ = {isa = PBXBuildFile; fileRef = D9FB08F92CE01F2100C2B82D /* polyhedron.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D9AA87D72CE00D24005905B4 /* HackerMath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HackerMath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D9AA87DA2CE00D24005905B4 /* HackerMathApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HackerMathApp.swift; sourceTree = "<group>"; };
-		D9AA87DC2CE00D24005905B4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D9AA87DC2CE00D24005905B4 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		D9AA87DE2CE00D25005905B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D9AA87E12CE00D25005905B4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D9AA87EB2CE00ECA005905B4 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		D9AA87ED2CE00EE6005905B4 /* EndScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndScreenView.swift; sourceTree = "<group>"; };
+		D9AA87EF2CE00EFF005905B4 /* gameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameViewModel.swift; sourceTree = "<group>"; };
+		D9AA87F12CE00F1B005905B4 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		D9AA87F62CE01A39005905B4 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		D9FB08F92CE01F2100C2B82D /* polyhedron.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = polyhedron.usdz; path = ../../polyhedron.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,9 +64,13 @@
 			isa = PBXGroup;
 			children = (
 				D9AA87DA2CE00D24005905B4 /* HackerMathApp.swift */,
-				D9AA87DC2CE00D24005905B4 /* ContentView.swift */,
+				D9AA87E82CE00E84005905B4 /* Views */,
+				D9AA87EA2CE00E94005905B4 /* Models */,
+				D9AA87E92CE00E8E005905B4 /* ViewModels */,
 				D9AA87DE2CE00D25005905B4 /* Assets.xcassets */,
+				D9FB08F92CE01F2100C2B82D /* polyhedron.usdz */,
 				D9AA87E02CE00D25005905B4 /* Preview Content */,
+				D9AA87F62CE01A39005905B4 /* Launch Screen.storyboard */,
 			);
 			path = HackerMath;
 			sourceTree = "<group>";
@@ -65,6 +81,32 @@
 				D9AA87E12CE00D25005905B4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D9AA87E82CE00E84005905B4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D9AA87DC2CE00D24005905B4 /* WelcomeView.swift */,
+				D9AA87EB2CE00ECA005905B4 /* GameView.swift */,
+				D9AA87ED2CE00EE6005905B4 /* EndScreenView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D9AA87E92CE00E8E005905B4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D9AA87EF2CE00EFF005905B4 /* gameViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D9AA87EA2CE00E94005905B4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D9AA87F12CE00F1B005905B4 /* GameModel.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +167,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9AA87F72CE01A39005905B4 /* Launch Screen.storyboard in Resources */,
 				D9AA87E22CE00D25005905B4 /* Preview Assets.xcassets in Resources */,
 				D9AA87DF2CE00D25005905B4 /* Assets.xcassets in Resources */,
+				D9FB08FA2CE01F2100C2B82D /* polyhedron.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,8 +181,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D9AA87DD2CE00D24005905B4 /* ContentView.swift in Sources */,
+				D9AA87EE2CE00EE6005905B4 /* EndScreenView.swift in Sources */,
+				D9AA87DD2CE00D24005905B4 /* WelcomeView.swift in Sources */,
+				D9AA87EC2CE00ECA005905B4 /* GameView.swift in Sources */,
 				D9AA87DB2CE00D24005905B4 /* HackerMathApp.swift in Sources */,
+				D9AA87F02CE00EFF005905B4 /* gameViewModel.swift in Sources */,
+				D9AA87F22CE00F1B005905B4 /* GameModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +326,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -307,6 +356,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
