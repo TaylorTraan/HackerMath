@@ -223,7 +223,7 @@ struct Question {
     
     // Utility function to create a question with answer options
     private static func createQuestion(text: String, answer: Int) -> Question {
-        var options = [answer]
+        var options = [answer, answer + 10]
         while options.count < 4 {
             let randomOption = Int.random(in: max(answer - 10, 0)...(answer + 10))
             if !options.contains(randomOption) {
