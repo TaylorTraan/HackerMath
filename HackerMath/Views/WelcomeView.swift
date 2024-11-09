@@ -31,7 +31,7 @@ struct WelcomeView: View {
             
             RealityKitView()
                 .edgesIgnoringSafeArea(.all)
-                .opacity(0.3)
+                .opacity(0.5)
             
             VStack {
                 Spacer()

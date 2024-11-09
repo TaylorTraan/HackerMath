@@ -15,6 +15,8 @@
 		D9AA87EE2CE00EE6005905B4 /* EndScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AA87ED2CE00EE6005905B4 /* EndScreenView.swift */; };
 		D9AA87F02CE00EFF005905B4 /* gameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AA87EF2CE00EFF005905B4 /* gameViewModel.swift */; };
 		D9AA87F22CE00F1B005905B4 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D9AA87F12CE00F1B005905B4 /* GameModel.swift */; };
+		D9AA87F72CE01A39005905B4 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D9AA87F62CE01A39005905B4 /* Launch Screen.storyboard */; };
+		D9FB08FA2CE01F2100C2B82D /* polyhedron.usdz in Resources */ = {isa = PBXBuildFile; fileRef = D9FB08F92CE01F2100C2B82D /* polyhedron.usdz */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		D9AA87ED2CE00EE6005905B4 /* EndScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndScreenView.swift; sourceTree = "<group>"; };
 		D9AA87EF2CE00EFF005905B4 /* gameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameViewModel.swift; sourceTree = "<group>"; };
 		D9AA87F12CE00F1B005905B4 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		D9AA87F62CE01A39005905B4 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		D9FB08F92CE01F2100C2B82D /* polyhedron.usdz */ = {isa = PBXFileReference; lastKnownFileType = file.usdz; name = polyhedron.usdz; path = ../../polyhedron.usdz; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +68,9 @@
 				D9AA87EA2CE00E94005905B4 /* Models */,
 				D9AA87E92CE00E8E005905B4 /* ViewModels */,
 				D9AA87DE2CE00D25005905B4 /* Assets.xcassets */,
+				D9FB08F92CE01F2100C2B82D /* polyhedron.usdz */,
 				D9AA87E02CE00D25005905B4 /* Preview Content */,
+				D9AA87F62CE01A39005905B4 /* Launch Screen.storyboard */,
 			);
 			path = HackerMath;
 			sourceTree = "<group>";
@@ -161,8 +167,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9AA87F72CE01A39005905B4 /* Launch Screen.storyboard in Resources */,
 				D9AA87E22CE00D25005905B4 /* Preview Assets.xcassets in Resources */,
 				D9AA87DF2CE00D25005905B4 /* Assets.xcassets in Resources */,
+				D9FB08FA2CE01F2100C2B82D /* polyhedron.usdz in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,6 +326,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -347,6 +356,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
