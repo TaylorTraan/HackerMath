@@ -20,6 +20,12 @@ struct GameView: View {
             VStack {
                 Spacer()
                 
+                Text("Question \(viewModel.currentQuestionIndex + 1) / \(viewModel.allQuestions.count)")
+                        .font(.custom("Courier", size: 24))
+                        .foregroundColor(.green)
+                        .shadow(color: .green, radius: 4)
+                        .padding(.bottom, 20)
+                
                 // Stopwatch Animation for Timer with Neon Green Color
                 ZStack {
                     // Background Circle (Static)

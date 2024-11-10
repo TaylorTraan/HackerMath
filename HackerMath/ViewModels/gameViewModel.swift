@@ -14,6 +14,7 @@ class GameViewModel: ObservableObject {
     @Published var currentQuestionIndex = 0
     @Published var isGameOver = false
     var initialTime: Int
+    var endTime: Int = 0
 
     var allQuestions: [Question] { gameModel.questions }
     var correctAnswers: Int { gameModel.correctAnswers }
@@ -58,7 +59,12 @@ class GameViewModel: ObservableObject {
         if currentQuestionIndex < allQuestions.count - 1 {
             currentQuestionIndex += 1
         } else {
-            isGameOver = true
+            endGame()
         }
+    }
+    
+    private func endGame() {
+        isGameOver = true
+        endTime = initialTime - timer // Calculate the elapsed time
     }
 }
