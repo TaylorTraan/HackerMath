@@ -35,6 +35,12 @@ struct EndScreenView: View {
                 Text("Score: \(viewModel.score, specifier: "%.2f")%")
                     .font(.custom("Courier", size: 20))
                     .foregroundColor(.green)
+                    .padding(.bottom, 10)
+                
+                //Time Taken
+                Text("Time Taken: \(viewModel.endTime) seconds")
+                    .font(.custom("Courier", size: 20))
+                    .foregroundColor(.green)
                     .padding(.bottom, 30)
                 
                 // Return to Home Button

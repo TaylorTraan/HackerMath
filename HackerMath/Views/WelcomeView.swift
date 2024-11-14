@@ -31,7 +31,7 @@ struct WelcomeView: View {
             
             RealityKitView()
                 .edgesIgnoringSafeArea(.all)
-                .opacity(0.5)
+                .opacity(0.3)
             
             VStack {
                 Spacer()
@@ -116,6 +116,18 @@ struct WelcomeView: View {
                     }
                 }
                 
+                if chosenDifficulty == 1 {
+                    difficultyText("Elementary School Level")
+                } else if chosenDifficulty == 2 {
+                    difficultyText("Middle School Level")
+                } else if chosenDifficulty == 3 {
+                    difficultyText("Highschool Level")
+                } else if chosenDifficulty == 4 {
+                    difficultyText("College Level")
+                } else if chosenDifficulty == 5 {
+                    difficultyText("Math Olympiad Level")
+                }
+                
                 Spacer()
                 
                 Button("Start Game") {
@@ -160,6 +172,38 @@ struct WelcomeView: View {
     }
 }
 
+// Function to format text based on input
+func difficultyText(_ text: String) -> some View {
+    TypingTextView(text: text)
+}
+
+struct TypingTextView: View {
+    let text: String
+    @State private var displayedText = ""
+    private let typingSpeed = 0.05  // Adjust speed for typing effect
+
+    var body: some View {
+        Text(displayedText)
+            .font(.custom("Courier", size: 16))
+            .foregroundColor(.green)
+            .multilineTextAlignment(.center)
+            .padding(.top, 10)
+            .onAppear {
+                displayedText = ""  // Start with an empty string
+                var currentIndex = 0
+
+                Timer.scheduledTimer(withTimeInterval: typingSpeed, repeats: true) { timer in
+                    if currentIndex < text.count {
+                        let index = text.index(text.startIndex, offsetBy: currentIndex)
+                        displayedText += String(text[index])
+                        currentIndex += 1
+                    } else {
+                        timer.invalidate()  // Stop the timer when done
+                    }
+                }
+            }
+    }
+}
 
 // Glitch Effect Modifier
 struct GlitchEffect: ViewModifier {

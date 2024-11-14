@@ -107,7 +107,7 @@ struct Question {
             let c = Int.random(in: 10...99)
             switch operation {
             case "*":
-                return ("\(a) * \(b)", a * b)
+                return ("\(a) x \(b)", a * b)
             case "/":
                 let dividend = a * b  // Ensures clean division
                 return ("\(dividend) / \(b)", a)
@@ -126,7 +126,7 @@ struct Question {
 
     // Generate triple-digit addition/subtraction
     static func generateDifficulty3() -> Question {
-        let operations = ["*", "/", "+", "-", "equate"]
+        let operations = ["*", "/", "+", "-", "equateAddition", "equateSubtraction"]
         let operation = operations.randomElement()!
         
         let (text, answer): (String, Int) = {
@@ -135,7 +135,7 @@ struct Question {
             let c = Int.random(in: 10...99)
             switch operation {
             case "*":
-                return ("\(a) * \(b)", a * b)
+                return ("\(a) x \(b)", a * b)
             case "/":
                 let dividend = a * b  // Ensures clean division
                 return ("\(dividend) / \(b)", a)
@@ -144,9 +144,12 @@ struct Question {
             case "-":
                 let total = a + c  // Ensures a non-negative result for subtraction
                 return ("\(total) - \(c)", a)
-            case "equate":
+            case "equateAddition":
                 let total = a + c
                 return ("\(a) + ? = \(total)", c)
+            case "equateSubtraction":
+                let total = a + c
+                return ("\(total) - ? = \(a)", c)
             default:
                 return ("\(a) + \(b)", a + b) // Fallback, though this case shouldn't occur
             }
@@ -157,7 +160,7 @@ struct Question {
 
     // Generate intermediate fraction questions
     static func generateDifficulty4() -> Question {
-        let operations = ["*", "/", "+", "-", "equate"]
+        let operations = ["*", "/", "+", "-", "equateAddition", "equateSubtraction"]
         let operation = operations.randomElement()!
         
         let (text, answer): (String, Int) = {
@@ -176,9 +179,12 @@ struct Question {
             case "-":
                 let total = a + c  // Ensures a non-negative result for subtraction
                 return ("\(total) - \(c)", a)
-            case "equate":
+            case "equateAddition":
                 let total = a + c
                 return ("\(a) + ? = \(total)", c)
+            case "equateSubtraction":
+                let total = a + c
+                return ("\(total) - ? = \(a)", c)
             default:
                 return ("\(a) + \(b)", a + b) // Fallback, though this case shouldn't occur
             }
