@@ -165,15 +165,14 @@ struct Question {
         
         let (text, answer): (String, Int) = {
             let a = Int.random(in: 11...99)
-            let b = Int.random(in: 11...99)
+            let b = Int.random(in: 3...19)
             let c = Int.random(in: 100...999)
             switch operation {
             case "*":
                 return ("\(a) x \(b)", a * b)
             case "/":
-                let f = Int.random(in: 3...20)
-                let dividend = a * f  // Ensures clean division
-                return ("\(dividend) / \(f)", a)
+                let dividend = a * b  // Ensures clean division
+                return ("\(dividend) / \(b)", a)
             case "+":
                 return ("\(c) + \(a)", a + c)
             case "-":
@@ -195,12 +194,13 @@ struct Question {
 
     // Generate difficult mental math questions
     static func generateDifficulty5() -> Question {
-        let operations = ["*", "/", "+", "-", "equate"]
+        let operations = ["*", "/", "+", "-", "equateAddition", "equateSubtraction"]
         let operation = operations.randomElement()!
         
         let (text, answer): (String, Int) = {
             let a = Int.random(in: 11...99)
             let b = Int.random(in: 11...99)
+            let c = Int.random(in: 100...999)
             switch operation {
             case "*":
                 return ("\(a) x \(b)", a * b)
@@ -208,16 +208,16 @@ struct Question {
                 let dividend = a * b  // Ensures clean division
                 return ("\(dividend) / \(b)", a)
             case "+":
-                let c = Int.random(in: 100...999)
                 return ("\(a) + \(c)", a + c)
             case "-":
-                let d = Int.random(in: 100...999)
-                let total = a + d  // Ensures a non-negative result for subtraction
-                return ("\(total) - \(d)", a)
-            case "equate":
-                let e = Int.random(in: 100...999)
-                let total = a + e
-                return ("\(a) + ? = \(total)", e)
+                let total = a + c  // Ensures a non-negative result for subtraction
+                return ("\(total) - \(c)", a)
+            case "equateAddition":
+                let total = a + c
+                return ("\(a) + ? = \(total)", c)
+            case "equateSubtraction":
+                let total = a + c
+                return ("\(total) - ? = \(a)", c)
             default:
                 return ("\(a) + \(b)", a + b) // Fallback, though this case shouldn't occur
             }
