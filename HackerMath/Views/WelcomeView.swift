@@ -19,6 +19,7 @@ struct WelcomeView: View {
     @State private var showAlert = false
     @State private var alertMessage = ""
     
+    @State private var isPopover: Bool = false
     @FocusState private var isInputActive: Bool // Track focus for TextFields
     
     var body: some View {
@@ -34,6 +35,21 @@ struct WelcomeView: View {
                 .opacity(0.3)
             
             VStack {
+                HStack {
+                    Button {
+                        withAnimation {
+                            isPopover.toggle()
+                        }
+                    } label: {
+                        Image(systemName: "line.3.horizontal")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25, height: 25)
+                            .foregroundColor(.green)
+                    }
+                    Spacer()
+                }
+                
                 Spacer()
                 
                 Text("HackerMath")
@@ -167,14 +183,79 @@ struct WelcomeView: View {
                 Spacer()
             }
             .padding()
+            GeometryReader { geometry in
+                if isPopover {
+                    Color.black.opacity(0.6)
+                        .ignoresSafeArea()
+                        .transition(.opacity)
+                        .animation(.easeInOut(duration: 0.3), value: isPopover)
+                        .onTapGesture {
+                            withAnimation {
+                                isPopover = false
+                            }
+                        }
+                    
+                    HStack(spacing: 0) {
+                        VStack {
+                            Text("More Games")
+                                .font(.custom("Courier", size: 24))
+                                .foregroundColor(.green)
+                                .padding(.top, 50)
+                            
+                            Button("80-in-8") {
+                                print("80-in-8 selected")
+                            }
+                            .font(.custom("Courier", size: 18))
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 20)
+                            .background(Color.green)
+                            .foregroundColor(.black)
+                            .cornerRadius(10)
+                            .padding(.top, 15)
+                            
+                            Button("Game 2") {
+                                print("Game 2 selected")
+                            }
+                            .font(.custom("Courier", size: 18))
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 20)
+                            .background(Color.green)
+                            .foregroundColor(.black)
+                            .cornerRadius(10)
+                            .padding(.top, 10)
+                            
+                            Button("Game 3") {
+                                print("Game 3 selected")
+                            }
+                            .font(.custom("Courier", size: 18))
+                            .padding(.vertical, 10)
+                            .padding(.horizontal, 20)
+                            .background(Color.green)
+                            .foregroundColor(.black)
+                            .cornerRadius(10)
+                            .padding(.top, 10)
+                            
+                            Spacer()
+                        }
+                        .frame(width: geometry.size.width * 0.5)
+                        .background(Color.black)
+                        .cornerRadius(15)
+                        .shadow(radius: 10)
+                        
+                        Spacer()
+                    }
+                    .transition(.move(edge: .leading))
+                    .animation(.easeInOut(duration: 0.3), value: isPopover)
+                }
+            }
         }
         .navigationBarBackButtonHidden()
     }
-}
-
-// Function to format text based on input
-func difficultyText(_ text: String) -> some View {
-    TypingTextView(text: text)
+    
+    // Function to format text based on input
+    func difficultyText(_ text: String) -> some View {
+        TypingTextView(text: text)
+    }
 }
 
 struct TypingTextView: View {
